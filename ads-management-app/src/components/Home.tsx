@@ -11,7 +11,7 @@ const Home = () => {
   const [quote, setQuote] = useState<Quote | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const apiEndpoint = `${import.meta.env.VITE_URL}/v1/quotes`;
+  const apiUrl = `${import.meta.env.VITE_API_URL}/v1/quotes`;
   const apiKey = import.meta.env.VITE_API_KEY;
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const Home = () => {
     setError(false);
 
     try {
-      const res = await fetch(apiEndpoint, {
+      const res = await fetch(apiUrl, {
         headers: {
           "X-Api-Key": apiKey,
         },
