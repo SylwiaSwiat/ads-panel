@@ -11,11 +11,11 @@ const data = [
     id: "2",
     name: "Summer Adventure",
     content: `Discover the biggest summer discounts at our store!
-       Shop from a wide selection of products, including electronics, clothing,
-       home essentials, and more. Don't miss this limited-time opportunity to save
-       up to 50% on your favorite items. Join thousands of satisfied customers
-       and enjoy fast shipping, excellent customer service, and unbeatable prices.
-       Hurry, offers valid only until the end of the season or while supplies last!`,
+Shop from a wide selection of products, including electronics, clothing,
+home essentials, and more. Don't miss this limited-time opportunity to save
+up to 50% on your favorite items. Join thousands of satisfied customers
+and enjoy fast shipping, excellent customer service, and unbeatable prices.
+Hurry, offers valid only until the end of the season or while supplies last!`,
     startDate: "2025-06-01",
     endDate: "2025-06-30",
   },

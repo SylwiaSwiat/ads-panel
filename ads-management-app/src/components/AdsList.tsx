@@ -34,6 +34,7 @@ const AdsList = ({ ads, setAds }: AdsListProps) => {
     const updatedAds = ads.filter((ad) => ad.id !== id);
     setAds(updatedAds);
     localStorage.setItem("ads", JSON.stringify(updatedAds));
+    setEditedAd(undefined);
   };
 
   const handleShowData = () => {
