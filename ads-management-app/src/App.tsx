@@ -123,7 +123,11 @@ function App() {
               <Route path="/error" element={<ErrorPage />}></Route>
               <Route
                 path="/advertisements/new"
-                element={<AdForm ads={ads} setAds={setAds} editing={false} />}
+                element={
+                  <ProtectedRoute>
+                    <AdForm ads={ads} setAds={setAds} editing={false} />
+                  </ProtectedRoute>
+                }
               />
             </Routes>
           </Container>
