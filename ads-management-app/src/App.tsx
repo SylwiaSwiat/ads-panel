@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import AdForm from "./components/AdForm";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { DarkModeRounded, LightModeRounded } from "@mui/icons-material";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 export type Ad = {
   id: string;
@@ -113,7 +114,11 @@ function App() {
               <Route path="/" element={<Home />}></Route>
               <Route
                 path="/advertisements"
-                element={<AdsList ads={ads} setAds={setAds} />}
+                element={
+                  <ProtectedRoute>
+                    <AdsList ads={ads} setAds={setAds} />
+                  </ProtectedRoute>
+                }
               />
               <Route path="/error" element={<ErrorPage />}></Route>
               <Route

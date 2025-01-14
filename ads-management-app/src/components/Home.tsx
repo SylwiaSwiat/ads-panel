@@ -1,6 +1,5 @@
 import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 type Quote = {
   quote: string;
@@ -13,7 +12,6 @@ const Home = () => {
   const [error, setError] = useState(false);
   const apiUrl = `${import.meta.env.VITE_API_URL}/v1/quotes`;
   const apiKey = import.meta.env.VITE_API_KEY;
-  const navigate = useNavigate();
 
   const getQuote = async () => {
     setLoading(true);
@@ -32,18 +30,6 @@ const Home = () => {
       setError(true);
     } finally {
       setLoading(false);
-    }
-  };
-
-  const passwordValidation = () => {
-    const pass = prompt("Please enter password");
-
-    if (!pass || pass === "") return;
-
-    if (pass === import.meta.env.VITE_PASSWORD) {
-      navigate("/advertisements");
-    } else {
-      navigate("/error");
     }
   };
 
@@ -118,7 +104,7 @@ const Home = () => {
         }}
         variant="contained"
         color="primary"
-        onClick={() => passwordValidation()}
+        href="/advertisements"
       >
         Ads Panel
       </Button>
