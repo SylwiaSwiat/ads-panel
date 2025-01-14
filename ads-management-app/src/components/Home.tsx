@@ -40,7 +40,7 @@ const Home = () => {
 
     if (!pass || pass === "") return;
 
-    if (pass === "recruitment") {
+    if (pass === import.meta.env.VITE_PASSWORD) {
       navigate("/advertisements");
     } else {
       navigate("/error");

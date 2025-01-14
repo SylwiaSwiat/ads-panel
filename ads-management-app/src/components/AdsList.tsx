@@ -4,7 +4,6 @@ import {
   Typography,
   Button,
   ListItem,
-  ListItemText,
   IconButton,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -153,42 +152,38 @@ const AdsList = ({ ads, setAds }: AdsListProps) => {
               }
               sx={{ pl: 0, pr: { xs: "4rem", md: "6rem" } }}
             >
-              <ListItemText
-                primary={
-                  <Typography
-                    component="span"
-                    sx={{
-                      color: "secondary",
-                      fontSize: { xs: "1.25rem", md: "2rem" },
-                    }}
-                  >
-                    {ad.name}
-                  </Typography>
-                }
-                secondary={
-                  <Box sx={{ display: "flex", flexDirection: "column" }}>
-                    {ad.content && (
-                      <Typography
-                        component="div"
-                        sx={{
-                          pt: 2,
-                          pb: 1,
-                          whiteSpace: "normal",
-                          wordWrap: "break-word",
-                          overflowWrap: "break-word",
-                          fontSize: { xs: ".875rem", md: "1rem" },
-                        }}
-                      >
-                        {ad.content}
-                      </Typography>
-                    )}
-                    <Typography component="span">
-                      Start: {ad.startDate}
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Typography
+                  component="span"
+                  sx={{
+                    color: "secondary",
+                    fontSize: { xs: "1.25rem", md: "2rem" },
+                  }}
+                >
+                  {ad.name}
+                </Typography>
+                <Box sx={{ display: "flex", flexDirection: "column" }}>
+                  {ad.content && (
+                    <Typography
+                      component="div"
+                      sx={{
+                        pt: 2,
+                        pb: 1,
+                        whiteSpace: "normal",
+                        wordWrap: "break-word",
+                        overflowWrap: "break-word",
+                        fontSize: { xs: ".875rem", md: "1rem" },
+                      }}
+                    >
+                      {ad.content}
                     </Typography>
-                    <Typography component="span">End: {ad.endDate}</Typography>
-                  </Box>
-                }
-              />
+                  )}
+                  <Typography component="span">
+                    Start: {ad.startDate}
+                  </Typography>
+                  <Typography component="span">End: {ad.endDate}</Typography>
+                </Box>
+              </Box>
             </ListItem>
           ))}
         </List>

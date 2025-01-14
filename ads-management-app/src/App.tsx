@@ -93,16 +93,6 @@ function App() {
           >
             <Box
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                height: "100vh",
-              }}
-            ></Box>
-
-            <Box
-              sx={{
                 position: "absolute",
                 top: "1rem",
                 right: "2rem",
@@ -129,10 +119,6 @@ function App() {
               <Route
                 path="/advertisements/new"
                 element={<AdForm ads={ads} setAds={setAds} editing={false} />}
-              />
-              <Route
-                path="/advertisements/edit/:id"
-                element={<AdForm ads={ads} setAds={setAds} editing={true} />}
               />
             </Routes>
           </Container>
